@@ -11,25 +11,33 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
 
-  pokemon: Pokemon = {
-    id: 1,
-    name: "bulbasaur",
-    species: "bulbasaur",
-    height: 7,
-    weight: 69, 
-    baseExperience: 64,
-    imageURI: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
-  }
+  pokemons;
 
   constructor(
     private pokemonService: PokemonService
   ) { }
 
   ngOnInit() {
+    this.getPokemons();
   }
 
-  getPokemons(): Observable<Pokemon[]> {
-    return this.pokemonService.getPokemons();
+  getPokemons() {
+    this.pokemonService.getPokemons().subscribe((data: Pokemon[]) => {
+      console.log(data);
+      this.pokemons = data["results"];
+    })
   }
 }
 
+
+
+
+  // pokemon: Pokemon = {
+  //   id: 1,
+  //   name: "bulbasaur",
+  //   species: "bulbasaur",
+  //   height: 7,
+  //   weight: 69, 
+  //   baseExperience: 64,
+  //   imageURI: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+  // }

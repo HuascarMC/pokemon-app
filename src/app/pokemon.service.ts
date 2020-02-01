@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { catchError, map, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 import { Pokemon } from './pokemon';
-import { of } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
 
-  configUrl = './assets/config.json';
-
   constructor(
     private http: HttpClient
   ) { }
 
-  getPokemons() {
-    return this.http.get<Pokemon[]>(this.configUrl)
-      .pipe(
-        tap(_ => console.log('fetched pokemons')),
-        catchError(this.handleError<Pokemon[]>('getPokemons', []))
-      );
+  getPokemons(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>("https://pokeapi.co/api/v2/pokemon/")
+    .pipe(
+     catchError(this.handleError)
+    );
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      console.error(error);
-
-      return of(result as T);
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent ) {
+      console.error('An error ocurred', error.error.message);
+    } else {
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was ${error.error}`);
     }
+    return throwError(
+      'Something bad happened; please try again later.'
+    );
   }
 }
