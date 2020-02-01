@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PokemonService {
 
-  configUrl = 'https://pokeapi.co/api/v2/pokemon';
+  configUrl = './assets/config.json';
 
   constructor(
     private http: HttpClient
