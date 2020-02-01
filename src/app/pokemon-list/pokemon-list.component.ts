@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { Pokemon } from '../pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -18,10 +21,15 @@ export class PokemonListComponent implements OnInit {
     imageURI: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
   }
 
-  constructor() { }
+  constructor(
+    private pokemonService: PokemonService
+  ) { }
 
   ngOnInit() {
   }
 
+  getPokemons(): Observable<Pokemon[]> {
+    return this.pokemonService.getPokemons();
+  }
 }
 
