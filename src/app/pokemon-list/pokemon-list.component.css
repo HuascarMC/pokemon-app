@@ -1,19 +1,3 @@
-:host {
-    width: 30%;
-    padding: 3% 10% 0% 7%;
-}
-
-a {
-    cursor: pointer;
-    color: white;
-    font-weight: lighter;
-    text-shadow: -6px 3px 0 #000, -4px 5px 0 #000, -9px 5px 0 #000, -13px 6px 0 #000;
-}
-
-a:hover {
-    font-size: 1.1em;
-    text-shadow: -2px -1px 0 #000, -3px -1px 0 #000, 0px 4px 0 #000, -7px 6px 0 #000;
-}
 /* You can add global styles to this file, and also import other style files */
 @import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
 
@@ -26,19 +10,54 @@ a:hover {
           url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg");
  }
 
+:host {
+    width: 30%;
+    padding: 3% 10% 0% 7%;
+}
+
+/* Pokemon names */
+
+a {
+    cursor: pointer;
+    color: white;
+    font-size: 2.4vw;
+    font-weight: lighter;
+    text-shadow: -6px 3px 0 #000, -4px 5px 0 #000, -9px 5px 0 #000, -13px 6px 0 #000;
+}
+
+a:hover {
+    font-size: 3.0vw;
+}
+
+h2:hover a {
+    text-shadow: -2px -1px 0 #000, -3px -1px 0 #000, 0px 4px 0 #000, -7px 6px 0 #000;
+
+}
+
  /* Application-wide Styles */
 h1 {
     color: #369;
     font-family: "Pokemon";
     font-size: 250%;
   }
+
   h2, h3 {
     font-family: "Pokemon";
     color: #444;
     font-weight: lighter;
   }
 
-  body, input[type="text"], button {
+body, input[type="text"], button {
     color: #333;
     font-family: Cambria, Georgia;
   }
+
+.right-column {
+    width: 20%;
+    float: right;
+}
+
+.left-column {
+    width: 20%;
+    float: left;
+}

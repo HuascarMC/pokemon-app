@@ -3,17 +3,17 @@
 /* Toolbar  */
 
 .toolbar {
-    height: 90px;
-    margin: -8px;
-    display: flex;
-    align-items: center;
-    background-color: #c00d0d;
-    color: white;
-    font-weight: 600;
-    padding: 1%;
-    display: inline-block;
-    justify-content: center;
-  }
+  height: 90px;
+  /* margin: -8px; */
+  display: flex;
+  align-items: center;
+  background-color: #c00d0d;
+  color: white;
+  font-weight: 600;
+  padding: 1%;
+  display: inline-block;
+  justify-content: center;
+}
 
   .toolbar img {
     margin: 0 16px;
