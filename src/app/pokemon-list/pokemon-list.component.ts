@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { Pokemon } from '../pokemon';
 import { PokemonAppComponent } from '../pokemon-app/pokemon-app.component';
 
 @Component({

@@ -1,9 +1,9 @@
-export class Pokemon {
+export abstract class Pokemon {
     id: number;
     name: string;
     species: string;
     height: number;
     weight: number;
     baseExperience: number;
-    imageURI: string;
+    images: string[];
 }

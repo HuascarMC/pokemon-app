@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { PokemonService } from '../pokemon.service';
-import { Pokemon } from '../pokemon';
+import { PokemonService } from '../services/pokemon.service';
+import { Pokemon } from '../models/pokemon';
 import { PokemonAppComponent } from '../pokemon-app/pokemon-app.component';
 
 @Component({
@@ -15,7 +15,6 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
   imageIndex: number = 2;
   pokemon;
   interval;
-  timeLeft: number = 60;
   
   constructor(
     protected pokemonService: PokemonService
@@ -24,16 +23,11 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
    }
 
   loopImages() {
-    console.log(this.images)
     this.interval = setInterval(() => {
       if(this.imageIndex == (this.images.length - 1)) {
         this.imageIndex = 0;
-        console.log(this.imageIndex)
       } else {
         this.imageIndex++;
-        console.log(this.imageIndex)
-        console.log(this.images[this.imageIndex])
-
       }
     }, 1500)
   }
@@ -54,6 +48,7 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
       console.log(data)
       this.pokemon = data;
       this.getImages();
+      this.loopImages();
     })
   }
 

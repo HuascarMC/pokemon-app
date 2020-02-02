@@ -3,8 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Pokemon } from './pokemon';
 import { Observable, throwError } from 'rxjs';
+import { Pokemon } from '../models/pokemon';
 
 @Injectable({
   providedIn: 'root'
