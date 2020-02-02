@@ -11,14 +11,20 @@ import { PokemonAppComponent } from '../pokemon-app/pokemon-app.component';
 export class PokemonListComponent extends PokemonAppComponent implements OnInit{
 
   @Output() pokemonClicked = new EventEmitter<Event>();
+  offset: number = 0;
 
   ngOnInit() {
-    this.getPokemons();
+    this.getPokemons(this.offset);
   }
 
-  onClick(event: Event): void {
+  onPokemonClick(event: Event): void {
     this.pokemonClicked.emit(event);
   }
+
+  onNextClick() {
+    this.offset++;
+    this.getPokemons(this.offset);
+  } 
 }
 
 

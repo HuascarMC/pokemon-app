@@ -21,8 +21,8 @@ export class PokemonAppComponent implements OnInit {
   ngOnInit() {
   }
   
-  getPokemons() {
-    this.pokemonService.getPokemons().subscribe((data: Pokemon[]) => {
+  getPokemons(offset: number) {
+    this.pokemonService.getPokemons(offset).subscribe((data: Pokemon[]) => {
       console.log(data);
       this.pokemons = data["results"];
     })
