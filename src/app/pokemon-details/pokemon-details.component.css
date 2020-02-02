@@ -423,8 +423,14 @@
 		box-shadow: -1px 2px #004200;
 		-webkit-box-shadow: -1px 2px #004200;
 		-moz-box-shadow: -1px 2px #004200;
-		-o-box-shadow: -1px 2px #004200;
-	}
+        -o-box-shadow: -1px 2px #004200;
+        cursor: pointer;
+    }
+    
+    div#barbutton1:hover
+    {
+        background: #057b05;
+    }
 
 	div#barbutton2
 	{

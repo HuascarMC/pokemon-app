@@ -11,7 +11,7 @@
     </div>
 
 </div> -->
-<div id="pokedex">
+<div id="pokedex" *ngIf="pokemon">
     <div id="left">
       <div id="logo"></div>
       <div id="bg_curve1_left"></div>
@@ -35,8 +35,8 @@
           <div id="buttontopPicture1"></div>
           <div id="buttontopPicture2"></div>
         </div>
-        <div id="picture" *ngIf="pokemon">
-            <img src="{{ pokemon.sprites.back_default }}"/>
+        <div id="picture" *ngIf="pokemon.sprites">
+            <img src="{{ images[imageIndex] }}"/>
         </div>
         <div id="buttonbottomPicture"></div>
         <div id="speakers">
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div id="bigbluebutton"></div>
-      <div id="barbutton1"></div>
+      <div id="barbutton1" (click)="nextImage()"></div>
       <div id="barbutton2"></div>
       <div id="cross">
         <div id="leftcross">

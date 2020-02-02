@@ -2,5 +2,5 @@
 
 <div class="app-component" fxLayout="row" gdGridAlign="start stretch"> 
     <app-pokemon-list (eventClicked)="pokemonDetails.getPokemon($event.url)"></app-pokemon-list>
-    <app-pokemon-details #pokemonDetails [event]="clickedEvent"></app-pokemon-details>
+    <app-pokemon-details #pokemonDetails></app-pokemon-details>
 </div>

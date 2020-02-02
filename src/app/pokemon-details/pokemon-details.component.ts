@@ -10,8 +10,10 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonDetailsComponent implements OnInit {
 
-  @Input() event: Event;
+  // @Input() event: Event;
   pokemon;
+  images: Array<String> = [];
+  imageIndex: number = 0;
 
   constructor(
     private pokemonService: PokemonService
@@ -21,9 +23,28 @@ export class PokemonDetailsComponent implements OnInit {
   }
 
   getPokemon(url: string) {
+    this.images = [];
     this.pokemon = this.pokemonService.getPokemon(url).subscribe((data: Pokemon) => {
       console.log(data)
       this.pokemon = data;
+      this.getImages()
     })
+  }
+
+  getImages() {
+    for( var name in this.pokemon.sprites ) {
+      if(this.pokemon.sprites[name] !== null) {
+        this.images.push(this.pokemon.sprites[name]);
+      }
+    }
+    console.log(this.images)
+  }
+
+  nextImage() {
+    if(this.imageIndex < this.images.length - 1) {
+      this.imageIndex++;
+    } else {
+      this.imageIndex = 0;
+    }
   }
 }
