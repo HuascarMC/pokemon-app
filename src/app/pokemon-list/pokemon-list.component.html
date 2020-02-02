@@ -1,10 +1,7 @@
 <div *ngIf="pokemons">
     <div *ngFor="let pokemon of pokemons">
-        <h2>{{ pokemon.name | uppercase }}</h2>
-        <!-- <h2>{{ pokemon.species | uppercase }}</h2>
-        <h2>{{ pokemon.height }}</h2>
-        <h2>{{ pokemon.weight }}</h2>
-        <h2>{{ pokemon.baseExperience }}</h2> -->
-        <!-- <img src="{{pokemon.imageURI }}" /> -->
+        <h2 (click)="onClick(pokemon)">
+            <a>{{ pokemon.name | uppercase }}</a>
+        </h2>
     </div>
 </div>

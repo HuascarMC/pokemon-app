@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Pokemon } from '../pokemon';
@@ -12,13 +12,18 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonListComponent implements OnInit {
 
   pokemons;
-
+  @Output() eventClicked = new EventEmitter<Event>();
+ 
   constructor(
     private pokemonService: PokemonService
   ) { }
 
   ngOnInit() {
     this.getPokemons();
+  }
+
+  onClick(event: Event): void {
+    this.eventClicked.emit(event);
   }
 
   getPokemons() {
