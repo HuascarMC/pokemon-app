@@ -15,6 +15,13 @@ export class PokemonService {
     private http: HttpClient
   ) { }
 
+  getPokemon(url: string) {
+    return this.http.get<Pokemon>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   getPokemons(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>("https://pokeapi.co/api/v2/pokemon/")
     .pipe(

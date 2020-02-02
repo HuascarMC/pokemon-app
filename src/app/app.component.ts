@@ -12,5 +12,6 @@ export class AppComponent {
 
   childEventClicked(event: Event) {
     this.clickedEvent = event;
+    console.log(event);
   }
 }
