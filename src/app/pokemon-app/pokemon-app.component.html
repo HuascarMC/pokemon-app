@@ -1,0 +1,6 @@
+<app-search-bar (searchSubmit)="pokemonDetails.getPokemonByName($event)"></app-search-bar>
+
+    <div class="app-component" fxLayout="row" gdGridAlign="start stretch">
+        <app-pokemon-list (pokemonClicked)="pokemonDetails.getPokemon($event.url)"></app-pokemon-list>
+        <app-pokemon-details #pokemonDetails></app-pokemon-details>
+    </div>

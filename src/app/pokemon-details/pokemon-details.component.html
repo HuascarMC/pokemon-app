@@ -1,0 +1,107 @@
+<!-- <div *ngIf="pokemon" >
+   <p> {{ pokemon.name }} </p>
+   <div *ngIf="pokemon.species">
+        <p>{{ pokemon.species.name }}</p>
+   </div>
+    <p>{{ pokemon.height }}</p>
+    <p>{{ pokemon.weight }}</p>
+    <p>{{ pokemon.base_xperience }}</p>
+    <div *ngIf="pokemon.sprites">
+        <img src="{{ pokemon.sprites.back_default }}"/>
+    </div>
+
+</div> -->
+<div id="pokedex" *ngIf="pokemon">
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+        <div id="picture" *ngIf="pokemon.sprites">
+            <img src="{{ images[imageIndex] }}"/>
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      <div id="bigbluebutton"></div>
+      <div id="barbutton1" (click)="nextImage()"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="stats" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemon">
+        <div class="left-column">
+          <strong>Name:</strong> <p *ngIf="pokemon">{{ pokemon.name }} </p> 
+          <strong>Type:</strong> <p *ngIf="pokemon.species">{{ pokemon.species.name }}</p>
+          <strong>Base Experience: </strong> <p *ngIf="pokemon">{{ pokemon.base_experience }}</p>
+        </div>
+        <div class="right-column">
+          <strong>Height:</strong> <p *ngIf="pokemon">{{ pokemon.height }}''</p>
+          <strong>Weight:</strong> <p *ngIf="pokemon">{{ pokemon.weight }}</p><br>
+        </div>
+      </div>
+      <div id="blueButtons1">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="blueButtons2">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="miniButtonGlass4"></div>
+      <div id="miniButtonGlass5"></div>
+      <div id="barbutton3"></div>
+      <div id="barbutton4"></div>
+      <div id="yellowBox1"></div>
+      <div id="yellowBox2"></div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
+    </div>
+  </div>
