@@ -7,13 +7,15 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     PokemonListComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

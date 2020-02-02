@@ -13,7 +13,7 @@ export class PokemonDetailsComponent implements OnInit {
   // @Input() event: Event;
   pokemon;
   images: Array<String> = [];
-  imageIndex: number = 0;
+  imageIndex: number = 2;
 
   constructor(
     private pokemonService: PokemonService

@@ -5,6 +5,14 @@
 
 a {
     cursor: pointer;
+    color: white;
+    font-weight: lighter;
+    text-shadow: -6px 3px 0 #000, -4px 5px 0 #000, -9px 5px 0 #000, -13px 6px 0 #000;
+}
+
+a:hover {
+    font-size: 1.1em;
+    text-shadow: -2px -1px 0 #000, -3px -1px 0 #000, 0px 4px 0 #000, -7px 6px 0 #000;
 }
 /* You can add global styles to this file, and also import other style files */
 @import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);

@@ -29,6 +29,13 @@ export class PokemonService {
     );
   }
 
+  getPokemonByName(name: string): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(`https://pokeapi.co/api/v2/pokemon/` + name)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent ) {
       console.error('An error ocurred', error.error.message);
