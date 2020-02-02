@@ -2,32 +2,40 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
+import { PokemonAppComponent } from '../pokemon-app/pokemon-app.component';
 
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.css']
 })
-export class PokemonDetailsComponent implements OnInit {
+export class PokemonDetailsComponent extends PokemonAppComponent implements OnInit {
 
-  // @Input() event: Event;
-  pokemon;
   images: Array<String> = [];
   imageIndex: number = 2;
-
+  pokemon;
+  
   constructor(
-    private pokemonService: PokemonService
-  ) { }
-
-  ngOnInit() {
-  }
-
+    protected pokemonService: PokemonService
+  ) {
+    super(pokemonService)
+   }
+   
   getPokemon(url: string) {
     this.images = [];
     this.pokemon = this.pokemonService.getPokemon(url).subscribe((data: Pokemon) => {
       console.log(data)
       this.pokemon = data;
       this.getImages()
+    })
+  }
+    
+  getPokemonByName(name) {
+    console.log(name);
+    this.pokemon = this.pokemonService.getPokemonByName(name).subscribe((data: Pokemon[]) => {
+      console.log(data)
+      this.pokemon = data;
+      this.getImages();
     })
   }
 

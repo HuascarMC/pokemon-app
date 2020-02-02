@@ -15,3 +15,8 @@ input {
     justify-content: center;
     text-transform: uppercase;
 }
+
+/* Button */
+button[type="submit"] {
+    display: none;
+}

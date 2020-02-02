@@ -8,6 +8,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
+import { PokemonAppComponent } from './pokemon-app/pokemon-app.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     TopBarComponent,
     PokemonListComponent,
     PokemonDetailsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    PokemonAppComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

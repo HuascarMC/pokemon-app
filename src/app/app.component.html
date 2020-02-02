@@ -1,9 +1,4 @@
 <div fxLayout="column">
     <app-top-bar></app-top-bar>
-    <app-search-bar></app-search-bar>
-
-    <div class="app-component" fxLayout="row" gdGridAlign="start stretch">
-        <app-pokemon-list (eventClicked)="pokemonDetails.getPokemon($event.url)"></app-pokemon-list>
-        <app-pokemon-details #pokemonDetails></app-pokemon-details>
-    </div>
+    <app-pokemon-app></app-pokemon-app>
 </div>
