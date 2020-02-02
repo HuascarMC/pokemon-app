@@ -755,8 +755,18 @@
     
     div#stats > p {
         margin: 0;
-        padding: 0;
-    }
+		padding: 0;
+	}
+
+	.left-column p {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.right-column p {
+		margin: 0;
+		padding: 0;
+	}
 
 	div#blueButtons1
 	{

@@ -68,12 +68,16 @@
       </div>
     </div>
     <div id="right">
-      <div id="stats" *ngIf="pokemon">
-        <strong>Name:</strong> <p *ngIf="pokemon">{{ pokemon.name }} </p> 
-        <strong>Type:</strong> <p *ngIf="pokemon.species">{{ pokemon.species.name }}
-        <strong>Base Experience: </strong> <p *ngIf="pokemon">{{ pokemon.base_experience }}</p> 
-        <strong>Height:</strong> <p *ngIf="pokemon">{{ pokemon.height }}''</p>
-        <strong>Weight:</strong> <p *ngIf="pokemon">{{ pokemon.weight }}</p><br>
+      <div id="stats" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemon">
+        <div class="left-column">
+          <strong>Name:</strong> <p *ngIf="pokemon">{{ pokemon.name }} </p> 
+          <strong>Type:</strong> <p *ngIf="pokemon.species">{{ pokemon.species.name }}</p>
+          <strong>Base Experience: </strong> <p *ngIf="pokemon">{{ pokemon.base_experience }}</p>
+        </div>
+        <div class="right-column">
+          <strong>Height:</strong> <p *ngIf="pokemon">{{ pokemon.height }}''</p>
+          <strong>Weight:</strong> <p *ngIf="pokemon">{{ pokemon.weight }}</p><br>
+        </div>
       </div>
       <div id="blueButtons1">
         <div class="blueButton"></div>

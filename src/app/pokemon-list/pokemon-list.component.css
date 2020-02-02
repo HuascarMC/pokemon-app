@@ -12,10 +12,14 @@
 
 :host {
     width: 40%;
-    padding: 3% 0% 0% 6%;
+    padding: 0% 0% 0% 6%;
 }
 
 /* Pokemon names */
+
+#pokemonName {
+    width: 45%;
+}
 
 a {
     cursor: pointer;
@@ -26,7 +30,8 @@ a {
 }
 
 a:hover {
-    font-size: 2.7vw;
+    font-size: 1.9vw;
+    color: #ffcb05;
 }
 
 h2:hover a {
@@ -38,6 +43,7 @@ h2:hover a {
 
 .list-buttons {
     padding-left: 30%;
+    position: static;
 }
 
 .start-btn{

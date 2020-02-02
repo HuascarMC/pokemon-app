@@ -21,10 +21,17 @@ export class PokemonListComponent extends PokemonAppComponent implements OnInit{
     this.pokemonClicked.emit(event);
   }
 
-  onNextClick() {
-    this.offset++;
+  onForwardClick() {
+    this.offset = this.offset + 10;
     this.getPokemons(this.offset);
   } 
+
+  onPreviousClick() {
+    if(this.offset !== 0) {
+      this.offset = this.offset - 10;
+      this.getPokemons(this.offset);
+    }
+  }
 }
 
 

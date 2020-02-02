@@ -14,6 +14,8 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
   images: Array<String> = [];
   imageIndex: number = 2;
   pokemon;
+  interval;
+  timeLeft: number = 60;
   
   constructor(
     protected pokemonService: PokemonService
@@ -21,12 +23,28 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
     super(pokemonService)
    }
 
+  loopImages() {
+    console.log(this.images)
+    this.interval = setInterval(() => {
+      if(this.imageIndex == (this.images.length - 1)) {
+        this.imageIndex = 0;
+        console.log(this.imageIndex)
+      } else {
+        this.imageIndex++;
+        console.log(this.imageIndex)
+        console.log(this.images[this.imageIndex])
+
+      }
+    }, 1500)
+  }
+
   getPokemon(url: string) {
     this.images = [];
     this.pokemon = this.pokemonService.getPokemon(url).subscribe((data: Pokemon) => {
       console.log(data)
       this.pokemon = data;
       this.getImages()
+      this.loopImages()
     })
   }
     
@@ -41,7 +59,7 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
 
   getImages() {
     for( var name in this.pokemon.sprites ) {
-      if(this.pokemon.sprites[name] !== null) {
+      if(this.pokemon.sprites[name] !== undefined && this.pokemon.sprites[name] !== null) {
         this.images.push(this.pokemon.sprites[name]);
       }
     }
