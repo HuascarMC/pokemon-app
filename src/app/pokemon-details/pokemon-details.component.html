@@ -1,5 +1,24 @@
-<p *ngIf="event" >
-    {{ event.name }}
-    {{ event.url }}
-</p>
+<div *ngIf="pokemon" >
+   <p> {{ pokemon.name }} </p>
+   <div *ngIf="pokemon.species">
+        <p>{{ pokemon.species.name }}</p>
+   </div>
+    <p>{{ pokemon.height }}</p>
+    <p>{{ pokemon.weight }}</p>
+    <p>{{ pokemon.base_xperience }}</p>
+    <div *ngIf="pokemon.sprites">
+        <img src="{{ pokemon.sprites.back_default }}"/>
+    </div>
 
+</div>
+
+
+<!-- // pokemon: Pokemon = {
+    //   id: 1,
+    //   name: "bulbasaur",
+    //   species: "bulbasaur",
+    //   height: 7,
+    //   weight: 69, 
+    //   baseExperience: 64,
+    //   imageURI: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+    // } -->

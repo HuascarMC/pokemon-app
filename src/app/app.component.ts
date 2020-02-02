@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pokemon-app';
 
-  public clickedEvent: Event;
+  // public clickedEvent: Event;
 
-  childEventClicked(event: Event) {
-    this.clickedEvent = event;
-    console.log(event);
-  }
+  // childEventClicked(event: Event) {
+  //   this.clickedEvent = event;
+  //   console.log(event);
+  // }
 }

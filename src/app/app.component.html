@@ -1,6 +1,6 @@
 <app-top-bar></app-top-bar>
 
 <div fxLayout="row">
-    <app-pokemon-list (eventClicked)="childEventClicked($event)"></app-pokemon-list>
-    <app-pokemon-details [event]="clickedEvent"></app-pokemon-details>
+    <app-pokemon-list (eventClicked)="pokemonDetails.getPokemon($event.url)"></app-pokemon-list>
+    <app-pokemon-details #pokemonDetails [event]="clickedEvent"></app-pokemon-details>
 </div>
