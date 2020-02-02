@@ -1,18 +1,21 @@
-<div *ngIf="pokemons">
-    <div class="left-column">
-        <div *ngFor="let pokemon of pokemons; let i = index">
-
-            <h2 *ngIf="i % 2 === 0" (click)="onClick(pokemon)">
-                <a>{{ pokemon.name | uppercase }}</a>
-            </h2>
+<div fxLayout="column" *ngIf="pokemons">
+    <div fxLayout="row">
+        <div class="left-column">
+            <div fxLayout="column" *ngFor="let pokemon of pokemons; let i = index">
+    
+                <h2 *ngIf="i % 2 === 0" (click)="onClick(pokemon)">
+                    <a>{{ pokemon.name | uppercase }}</a>
+                </h2>
+            </div>
+        </div>
+        <div class="right-column">
+            <div fxLayout="column" *ngFor="let pokemon of pokemons; let i = index">
+    
+                <h2 *ngIf="i % 2 !== 0" (click)="onClick(pokemon)">
+                    <a>{{ pokemon.name | uppercase }}</a>
+                </h2>
+            </div>
         </div>
     </div>
-    <div class="right-column">
-        <div *ngFor="let pokemon of pokemons; let i = index">
-
-            <h2 *ngIf="i % 2 !== 0" (click)="onClick(pokemon)">
-                <a>{{ pokemon.name | uppercase }}</a>
-            </h2>
-        </div>
-    </div>
+  
 </div>

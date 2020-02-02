@@ -20,7 +20,7 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
   ) {
     super(pokemonService)
    }
-   
+
   getPokemon(url: string) {
     this.images = [];
     this.pokemon = this.pokemonService.getPokemon(url).subscribe((data: Pokemon) => {
@@ -31,7 +31,7 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
   }
     
   getPokemonByName(name) {
-    console.log(name);
+    this.images = [];
     this.pokemon = this.pokemonService.getPokemonByName(name).subscribe((data: Pokemon[]) => {
       console.log(data)
       this.pokemon = data;
@@ -45,7 +45,6 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
         this.images.push(this.pokemon.sprites[name]);
       }
     }
-    console.log(this.images)
   }
 
   nextImage() {
