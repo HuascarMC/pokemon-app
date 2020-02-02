@@ -1,8 +1,14 @@
-<div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" fxLayoutAlign="flex-start" *ngIf="pokemons">
-            <div  *ngFor="let pokemon of pokemons; let i = index">
-    
-                <h2  (click)="onClick(pokemon)">
-                    <a>{{ pokemon.name | uppercase }}</a>
-                </h2>
-            </div>
+<div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="flex-start">
+    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemons">
+        <div *ngFor="let pokemon of pokemons; let i = index">
+
+            <h2 (click)="onClick(pokemon)">
+                <a>{{ pokemon.name | uppercase }}</a>
+            </h2>
+        </div>
+    </div>
+    <div class="list-buttons" fxLayout="row"  fxLayout.lt-md="column">
+        <span class='start-btn'>BACK</span>
+        <span class='start-btn'>NEXT</span>
+    </div>
 </div>

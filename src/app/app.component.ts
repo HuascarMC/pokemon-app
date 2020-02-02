@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemon-app';
-
-  // public clickedEvent: Event;
-
-  // childEventClicked(event: Event) {
-  //   this.clickedEvent = event;
-  //   console.log(event);
-  // }
 }
