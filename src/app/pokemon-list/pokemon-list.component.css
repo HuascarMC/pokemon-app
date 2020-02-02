@@ -12,7 +12,7 @@
 
 :host {
     width: 40%;
-    padding: 3% 0% 0% 7%;
+    padding: 3% 0% 0% 6%;
 }
 
 /* Pokemon names */
@@ -55,6 +55,7 @@ body, input[type="text"], button {
 .right-column {
     width: 50%;
     float: right;
+    margin-right: 1.5%;
 }
 
 .left-column {
