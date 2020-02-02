@@ -1,6 +1,7 @@
-* {
+:host {
 	margin: 0;
-	padding: 0;
+    padding: 5%;
+    width: 70%;
 }
 
 
@@ -300,7 +301,9 @@
 	div#picture img
 	{
 		display: block;
-		margin: 0 auto;
+        margin: 0 auto;
+        height: 97%;
+        width: 97%;
 	}
 
 	div#topPicture
@@ -677,7 +680,7 @@
 	{
 		width: 350px;
 		height: 80px;
-		background-color: #fff;
+		background-color: #ffe0e0;
 
 		border-top-right-radius: 30px;
 		-webkit-border-top-right-radius: 30px;
@@ -689,7 +692,7 @@
 	{
 		width: 216px;
 		height: 100px;
-		background-color: #fff;
+		background-color: #ffe0e0;
 		float: left;
 
 		position: absolute;
@@ -742,7 +745,12 @@
 		-webkit-box-shadow: 0 0 20px #003300 inset;
 		-moz-box-shadow: 0 0 20px #003300 inset;
 		-o-box-shadow: 0 0 20px #003300 inset;
-	}
+    }
+    
+    div#stats > p {
+        margin: 0;
+        padding: 0;
+    }
 
 	div#blueButtons1
 	{
