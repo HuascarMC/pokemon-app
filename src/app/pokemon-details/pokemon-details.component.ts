@@ -24,12 +24,12 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
 
   loopImages() {
     this.interval = setInterval(() => {
-      if(this.imageIndex == (this.images.length - 1)) {
+      if(this.imageIndex >= (this.images.length - 1)) {
         this.imageIndex = 0;
       } else {
         this.imageIndex++;
       }
-    }, 1500)
+    }, 1000)
   }
 
   getPokemon(url: string) {
@@ -37,8 +37,8 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
     this.pokemon = this.pokemonService.getPokemon(url).subscribe((data: Pokemon) => {
       console.log(data)
       this.pokemon = data;
+      clearInterval(this.interval)
       this.getImages()
-      this.loopImages()
     })
   }
     
@@ -48,7 +48,6 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
       console.log(data)
       this.pokemon = data;
       this.getImages();
-      this.loopImages();
     })
   }
 
@@ -58,6 +57,7 @@ export class PokemonDetailsComponent extends PokemonAppComponent implements OnIn
         this.images.push(this.pokemon.sprites[name]);
       }
     }
+    this.loopImages();
   }
 
   nextImage() {
