@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { config } from '../config'
 import { Observable, throwError } from 'rxjs';
 import { Pokemon } from '../models/pokemon';
 
@@ -10,10 +11,14 @@ import { Pokemon } from '../models/pokemon';
   providedIn: 'root'
 })
 export class PokemonService {
+  
+  apiUrl: string;
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) { 
+    this.apiUrl = config.apiUrl;
+  }
 
   getPokemon(url: string) {
     return this.http.get<Pokemon>(url)
@@ -23,14 +28,14 @@ export class PokemonService {
   }
 
   getPokemons(offset: number): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(`https://pokeapi.co/api/v2/pokemon/?offset=` + offset + `&limit=10`)
+    return this.http.get<Pokemon[]>(`${this.apiUrl}` + `?offset=` + offset + `&limit=10`)
     .pipe(
      catchError(this.handleError)
     );
   }
 
   getPokemonByName(name: string): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(`https://pokeapi.co/api/v2/pokemon/` + name)
+    return this.http.get<Pokemon[]>(`${this.apiUrl}` + name)
     .pipe(
       catchError(this.handleError)
     );

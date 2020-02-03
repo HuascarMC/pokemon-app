@@ -5,7 +5,6 @@
   display: flex;
   background-color: #c00d0d;
   padding: 1%;
-  display: inline-block;
   justify-content: center;
   position: relative;
 }

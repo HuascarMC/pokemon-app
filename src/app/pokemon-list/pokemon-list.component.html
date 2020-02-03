@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="flex-start">
-    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemons">
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemons">
         <div id="pokemonName" *ngFor="let pokemon of pokemons; let i = index">
 
             <h2 (click)="onPokemonClick(pokemon)">
