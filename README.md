@@ -1,4 +1,4 @@
-# PokemonApp
+# PokemonApp - Click [here](https://huascarmc.github.io/pokemon-app/) to use deployed app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
