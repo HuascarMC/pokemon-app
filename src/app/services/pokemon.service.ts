@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
-import { config } from '../config'
+import { environment } from '../../environments/environment'
 import { Observable, throwError } from 'rxjs';
 import { Pokemon } from '../models/pokemon';
 
@@ -11,16 +11,17 @@ import { Pokemon } from '../models/pokemon';
   providedIn: 'root'
 })
 export class PokemonService {
-  
+
   apiUrl: string;
 
   constructor(
     private http: HttpClient
-  ) { 
-    this.apiUrl = config.apiUrl;
+  ) {
+    this.apiUrl = environment.apiUrl;
   }
 
   getPokemon(url: string) {
+    console.log(this.apiUrl)
     return this.http.get<Pokemon>(url)
       .pipe(
         catchError(this.handleError)
@@ -29,20 +30,20 @@ export class PokemonService {
 
   getPokemons(offset: number): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(`${this.apiUrl}` + `?offset=` + offset + `&limit=10`)
-    .pipe(
-     catchError(this.handleError)
-    );
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   getPokemonByName(name: string): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(`${this.apiUrl}` + name)
-    .pipe(
-      catchError(this.handleError)
-    );
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent ) {
+    if (error.error instanceof ErrorEvent) {
       console.error('An error ocurred', error.error.message);
     } else {
       console.error(

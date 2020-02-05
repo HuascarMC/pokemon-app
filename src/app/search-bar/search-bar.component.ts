@@ -18,5 +18,5 @@ export class SearchBarComponent extends PokemonAppComponent implements OnInit {
     const name = new FormData(event.target).get('name');
     this.searchSubmit.emit(name);
   }
-    
+
 }

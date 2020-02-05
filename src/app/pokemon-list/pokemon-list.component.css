@@ -91,29 +91,6 @@
 	top: .2em;
 }
 
- /* Application-wide Styles */
-h1 {
-    color: #369;
-    font-family: "Pokemon";
-    font-size: 250%;
-  }
-
-  h2, h3 {
-    font-family: "Pokemon";
-    color: #444;
-    font-weight: lighter;
-  }
-
-body, input[type="text"], button {
-    color: #333;
-    font-family: Cambria, Georgia;
-  }
-
-  /* .pokemon-names-container {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
   /* small size viewport */ 
 @media screen and (max-width: 960px) {
 

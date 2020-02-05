@@ -7,12 +7,12 @@ import { PokemonAppComponent } from '../pokemon-app/pokemon-app.component';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css']
 })
-export class PokemonListComponent extends PokemonAppComponent implements OnInit{
+export class PokemonListComponent extends PokemonAppComponent implements OnInit {
 
   @Output() pokemonClicked = new EventEmitter<Event>();
   offset: number = 0;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getPokemons(this.offset);
   }
 
@@ -20,13 +20,13 @@ export class PokemonListComponent extends PokemonAppComponent implements OnInit{
     this.pokemonClicked.emit(event);
   }
 
-  onForwardClick() {
+  onForwardClick(): void {
     this.offset = this.offset + 10;
     this.getPokemons(this.offset);
-  } 
+  }
 
-  onPreviousClick() {
-    if(this.offset !== 0) {
+  onPreviousClick(): void {
+    if (this.offset !== 0) {
       this.offset = this.offset - 10;
       this.getPokemons(this.offset);
     }
@@ -36,4 +36,3 @@ export class PokemonListComponent extends PokemonAppComponent implements OnInit{
 
 
 
- 

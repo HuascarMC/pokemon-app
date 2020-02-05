@@ -1,7 +1,8 @@
 <app-search-bar (searchSubmit)="pokemonDetails.getPokemonByName($event)"></app-search-bar>
 
-    <div class="app-component" fxLayout="row" fxLayout.md="row" fxLayout.sm="column-reverse" fxLayout.xs="column-reverse" gdGridAlign="start stretch">
+<div class="app-component" fxLayout="row" fxLayout.md="row" fxLayout.sm="column-reverse" fxLayout.xs="column-reverse"
+    gdGridAlign="start stretch">
 
-        <app-pokemon-list (pokemonClicked)="pokemonDetails.getPokemon($event.url)"></app-pokemon-list>
-        <app-pokemon-details #pokemonDetails></app-pokemon-details>
-    </div>
+    <app-pokemon-list (pokemonClicked)="pokemonDetails.getPokemon($event.url)"></app-pokemon-list>
+    <app-pokemon-details #pokemonDetails></app-pokemon-details>
+</div>
