@@ -11,39 +11,59 @@
  }
 
 :host {
-    width: 50%;
-    padding: 0% 0% 0% 6%;
+    /* width: 50%; */
+    padding: 0% 0% 0% 4%;
+    height: 100%;
+    width: 31%;
+    flex-flow: flex-direction flex-wrap;
+
 }
 
 /* Pokemon names */
 
-#pokemonName {
-    width: 45%;
+.pokemon-names-container {
+    display: grid;
+    grid-template-columns: 
+    repeat(2,
+    minmax(40%, 1fr));
+    grid-gap: 10px 10px;
+    max-height: 100%;
+    width: 100%;
 }
 
-a {
+.pokemon-names-container > div {
+    text-align: center;
+}
+
+#pokemon-name {
+    margin: 19px;
+    width: 91%;
+    display: inline-block;
     cursor: pointer;
     color: white;
-    font-size: 2.4vw;
+    font-size: 2vw;
+    font-weight: lighter;
+    text-align: center;
+    font-family: "Pokemon";
     font-weight: lighter;
     text-shadow: -6px 3px 0 #000, -4px 5px 0 #000, -9px 5px 0 #000, -13px 6px 0 #000;
 }
 
-a:hover {
-    font-size: 2.3vw;
+
+#pokemon-name:hover {
+    font-size: 1.9vw;
+    text-shadow: -2px -1px 0 #000, -3px -1px 0 #000, 0px 4px 0 #000, -7px 6px 0 #000;
+
     color: #ffcb05;
 }
 
-h2:hover a {
-    text-shadow: -2px -1px 0 #000, -3px -1px 0 #000, 0px 4px 0 #000, -7px 6px 0 #000;
-
-}
 
 /* Video Game Buttons */
 
 .list-buttons {
-    padding-left: 30%;
-    position: static;
+    display: inline-block;
+    /* position: static; */
+    justify-content: center;
 }
 
 .start-btn{
@@ -89,9 +109,47 @@ body, input[type="text"], button {
     font-family: Cambria, Georgia;
   }
 
-  /* small size viewport */
-  @media screen and (max-width: 599) {
+  /* .pokemon-names-container {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+  /* small size viewport */ 
+@media screen and (max-width: 960px) {
+
       :host {
-          overflow-y: scroll;
+          width: 100%;
+          padding: 0;
       }
+
+      #pokemon-name {
+        margin: 0 auto;
+        width: 100%;
+        justify-self: start;
+    }
+
+      .pokemon-names-container {
+            display: inline-grid;
+            grid-template-columns: 
+            repeat(5,
+            minmax(15%, 1fr));
+            grid-template-rows: 26% 0;
+          height: 100%;
+          grid-gap: 0;
+          margin-bottom: -3%;
+
+      }
+
+      #pokemon-name {
+          text-shadow: -4px 2px 0 #000, 0px 0px 0 #000, -3px 1px 0 #000, -3px 3px 0 #000;
+          font-size: 3.6vw;
+          align-self: start;
+      }
+
+      #pokemon-name:hover {
+        font-size: 3.3vw;
+        color: #ffcb05;
+    }
   }
+
+  

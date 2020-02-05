@@ -1,5 +1,31 @@
+<div class="pokemon-names-container" *ngIf="pokemons">
+    <div (click)="onPokemonClick(pokemon)" id="pokemon-name" *ngFor="let pokemon of pokemons; let i = index">
+        {{ pokemon.name | uppercase }}
+    </div>
+</div>
+<div class="list-buttons" fxLayout="row">
+    <span (click)="onPreviousClick()" class='start-btn'>Previous</span>
+    <span (click)="onForwardClick()" class='start-btn'>Forward</span>
+</div>
+
+
+<!-- <div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="flex-start">
+    <div fxLayout="row wrap" fxLayout.lt-md="row wrap" fxLayout.lt-sm="row wrap" xLayout.lt-xs="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemons">
+        <div id="pokemonName" *ngFor="let pokemon of pokemons; let i = index">
+
+            <h2 (click)="onPokemonClick(pokemon)">
+                <a>{{ pokemon.name | uppercase }}</a>
+            </h2>
+        </div>
+    </div>
+    <div class="list-buttons" fxLayout="row wrap"  fxLayout.lt-md="column">
+        <span (click)="onPreviousClick()" class='start-btn'>Previous</span>
+        <span (click)="onForwardClick()" class='start-btn'>Forward</span>
+    </div>
+</div> -->
+<!-- 
 <div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="flex-start">
-    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemons">
+    <div fxLayout="row wrap"  fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemons">
         <div id="pokemonName" *ngFor="let pokemon of pokemons; let i = index">
 
             <h2 (click)="onPokemonClick(pokemon)">
@@ -11,4 +37,4 @@
         <span (click)="onPreviousClick()" class='start-btn'>Previous</span>
         <span (click)="onForwardClick()" class='start-btn'>Forward</span>
     </div>
-</div>
+</div> -->
