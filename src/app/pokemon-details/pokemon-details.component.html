@@ -11,13 +11,15 @@
     </div>
 
 </div> -->
-<div id="pokedex" *ngIf="pokemon">
+
+<div id="pokedex">
     <div id="left">
       <div id="logo"></div>
+      
       <div id="bg_curve1_left"></div>
       <div id="bg_curve2_left"></div>
       <div id="curve1_left">
-        <div id="buttonGlass">
+        <div id="buttonGlass" [ngStyle]="{'background-image': (images[imageIndex]) ? 'url(' + images[imageIndex] + ')' : ''}">
           <div id="reflect"> </div>
         </div>
         <div id="miniButtonGlass1"></div>
@@ -35,7 +37,7 @@
           <div id="buttontopPicture1"></div>
           <div id="buttontopPicture2"></div>
         </div>
-        <div id="picture" *ngIf="pokemon.sprites">
+        <div id="picture" *ngIf="pokemon">
             <img src="{{ images[imageIndex] }}"/>
         </div>
         <div id="buttonbottomPicture"></div>
@@ -68,15 +70,15 @@
       </div>
     </div>
     <div id="right">
-      <div id="stats" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngIf="pokemon">
-        <div class="left-column">
-          <strong>Name:</strong> <p *ngIf="pokemon">{{ pokemon.name }} </p> 
-          <strong>Type:</strong> <p *ngIf="pokemon.species">{{ pokemon.species.name }}</p>
-          <strong>Base Experience: </strong> <p *ngIf="pokemon">{{ pokemon.base_experience }}</p>
+      <div id="stats" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+        <div class="left-column" *ngIf="pokemon">
+          <strong>Name:</strong> <p>{{ pokemon.name }} </p> 
+          <strong>Type:</strong> <p>{{ pokemon.species.name }}</p>
+          <strong>Base Experience: </strong> <p>{{ pokemon.base_experience }}</p>
         </div>
-        <div class="right-column">
-          <strong>Height:</strong> <p *ngIf="pokemon">{{ pokemon.height }}''</p>
-          <strong>Weight:</strong> <p *ngIf="pokemon">{{ pokemon.weight }}</p><br>
+        <div class="right-column" *ngIf="pokemon">
+          <strong>Height:</strong> <p>{{ pokemon.height }}''</p>
+          <strong>Weight:</strong> <p>{{ pokemon.weight }}</p><br>
         </div>
       </div>
       <div id="blueButtons1">

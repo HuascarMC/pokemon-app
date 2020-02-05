@@ -962,7 +962,7 @@
 
 }
 
-@media handheld and (orientation:portrait), (max-width:768px) {
+@media handheld and (orientation:portrait), (max-width:568px) {
 
 	div#pokedex
 	{
