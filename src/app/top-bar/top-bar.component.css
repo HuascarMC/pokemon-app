@@ -6,13 +6,12 @@
   background-color: #c00d0d;
   padding: 1%;
   justify-content: center;
+  max-height: 70px;
   position: relative;
 }
 
-
 /* Logo */
 img {
-    max-height: 17%;
-    max-width: 17%;
+  max-height: 100px;
+  max-width: 110px;
 }
-
