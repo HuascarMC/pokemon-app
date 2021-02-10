@@ -5,9 +5,15 @@
     <div id="bg_curve1_left"></div>
     <div id="bg_curve2_left"></div>
     <div id="curve1_left">
-      <div id="buttonGlass"
-        [ngStyle]="{'background-image': (images[imageIndex]) ? 'url(' + images[imageIndex] + ')' : ''}">
-        <div id="reflect"> </div>
+      <div
+        id="buttonGlass"
+        [ngStyle]="{
+          'background-image': images[imageIndex]
+            ? this.getImageIndexUrl(imageIndex)
+            : ''
+        }"
+      >
+        <div id="reflect"></div>
       </div>
       <div id="miniButtonGlass1"></div>
       <div id="miniButtonGlass2"></div>
@@ -57,12 +63,18 @@
     </div>
   </div>
   <div id="right">
-    <div id="stats" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <div
+      id="stats"
+      fxLayout="row wrap"
+      fxLayout.lt-md="column"
+      fxLayoutGap="32px"
+      fxLayoutAlign="flex-start"
+    >
       <div class="left-column" *ngIf="pokemon">
         <strong>Name:</strong>
-        <p>{{ pokemon.name }} </p>
+        <p>{{ pokemon.name }}</p>
         <strong>Type:</strong>
-        <p>{{ pokemon.species.name }}</p>
+        <p>{{ pokemon.species && pokemon.species.name }}</p>
         <strong>Base Experience: </strong>
         <p>{{ pokemon.base_experience }}</p>
       </div>
@@ -70,7 +82,8 @@
         <strong>Height:</strong>
         <p>{{ pokemon.height }}''</p>
         <strong>Weight:</strong>
-        <p>{{ pokemon.weight }}</p><br>
+        <p>{{ pokemon.weight }}</p>
+        <br />
       </div>
     </div>
     <div id="blueButtons1">

@@ -1,57 +1,46 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
-import { catchError } from 'rxjs/operators';
+import { catchError } from "rxjs/operators";
 
-import { environment } from '../../environments/environment'
-import { Observable, throwError } from 'rxjs';
-import { Pokemon } from '../models/pokemon';
+import { environment } from "../../environments/environment";
+import { Observable, throwError } from "rxjs";
+import { Pokemon } from "../models/pokemon";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class PokemonService {
-
   apiUrl: string;
 
-  constructor(
-    private http: HttpClient
-  ) {
+  constructor(private http: HttpClient) {
     this.apiUrl = environment.apiUrl;
   }
 
   getPokemon(url: string) {
-    console.log(this.apiUrl)
-    return this.http.get<Pokemon>(url)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http.get<Pokemon>(url).pipe(catchError(this.handleError));
   }
 
   getPokemons(offset: number): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(`${this.apiUrl}` + `?offset=` + offset + `&limit=10`)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .get<Pokemon[]>(`${this.apiUrl}` + `?offset=` + offset + `&limit=10`)
+      .pipe(catchError(this.handleError));
   }
 
   getPokemonByName(name: string): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(`${this.apiUrl}` + name)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .get<Pokemon[]>(`${this.apiUrl}` + name)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      console.error('An error ocurred', error.error.message);
+      console.error("An error ocurred", error.error.message);
     } else {
       console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was ${error.error}`);
+        `Backend returned code ${error.status}, ` + `body was ${error.error}`
+      );
     }
-    return throwError(
-      'Something bad happened; please try again later.'
-    );
+    return throwError("Something bad happened; please try again later.");
   }
 }
