@@ -1,4 +1,4 @@
-# Pokedex App
+# Pokedex
 
 Click [here](https://huasmc.github.io/pokedex/) to use deployed app
 
